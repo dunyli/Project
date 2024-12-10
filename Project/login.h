@@ -1,6 +1,6 @@
 #pragma once
-//#include "info.h"
-//#include "password.h"
+#include "info.h"
+#include "password.h"
 //#include "work.h"
 
 namespace Project {
@@ -173,8 +173,8 @@ namespace Project {
 #pragma endregion
 /*Обработка кнопки СПРАВКА, после нажатия кнопки происходит открытие формы info.h*/
 private: System::Void button_login_info_Click(System::Object^ sender, System::EventArgs^ e) {
-	//info^ inf = gcnew info;
-	//inf->Show();
+	info^ inf = gcnew info;
+	inf->Show();
 }
 /*Обработка кнопки ВЫХОД, после нажатия кнопки происходит закрытие формы*/
 private: System::Void button_login_exit_Click(System::Object^ sender, System::EventArgs^ e) {

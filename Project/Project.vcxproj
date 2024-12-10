@@ -118,10 +118,14 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <ClCompile Include="info.cpp" />
     <ClCompile Include="login.cpp" />
     <ClCompile Include="password.cpp" />
   </ItemGroup>
   <ItemGroup>
+    <ClInclude Include="info.h">
+      <FileType>CppForm</FileType>
+    </ClInclude>
     <ClInclude Include="login.h">
       <FileType>CppForm</FileType>
     </ClInclude>
@@ -130,6 +134,9 @@
     </ClInclude>
   </ItemGroup>
   <ItemGroup>
+    <EmbeddedResource Include="info.resx">
+      <DependentUpon>info.h</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="login.resx">
       <DependentUpon>login.h</DependentUpon>
     </EmbeddedResource>

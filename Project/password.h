@@ -131,7 +131,7 @@ namespace Project {
 			this->Controls->Add(this->textBox_password);
 			this->Controls->Add(this->label_password);
 			this->Name = L"password";
-			this->Text = L"password";
+			this->Text = L"¬вод парол€";
 			this->ResumeLayout(false);
 			this->PerformLayout();
 
