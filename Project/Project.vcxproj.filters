@@ -18,9 +18,15 @@
     <ClCompile Include="login.cpp">
       <Filter>Файлы ресурсов</Filter>
     </ClCompile>
+    <ClCompile Include="password.cpp">
+      <Filter>Файлы ресурсов</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="login.h">
+      <Filter>Файлы ресурсов</Filter>
+    </ClInclude>
+    <ClInclude Include="password.h">
       <Filter>Файлы ресурсов</Filter>
     </ClInclude>
   </ItemGroup>
