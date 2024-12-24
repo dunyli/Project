@@ -69,6 +69,7 @@ namespace Project {
 			// button_login_info
 			// 
 			this->button_login_info->Anchor = static_cast<System::Windows::Forms::AnchorStyles>((System::Windows::Forms::AnchorStyles::Top | System::Windows::Forms::AnchorStyles::Right));
+			this->button_login_info->BackColor = System::Drawing::Color::SeaShell;
 			this->button_login_info->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 13.875F, System::Drawing::FontStyle::Regular,
 				System::Drawing::GraphicsUnit::Point, static_cast<System::Byte>(204)));
 			this->button_login_info->Location = System::Drawing::Point(983, 12);
@@ -76,12 +77,13 @@ namespace Project {
 			this->button_login_info->Size = System::Drawing::Size(206, 99);
 			this->button_login_info->TabIndex = 0;
 			this->button_login_info->Text = L"Справка";
-			this->button_login_info->UseVisualStyleBackColor = true;
+			this->button_login_info->UseVisualStyleBackColor = false;
 			this->button_login_info->Click += gcnew System::EventHandler(this, &login::button_login_info_Click);
 			// 
 			// button_login_exit
 			// 
 			this->button_login_exit->Anchor = static_cast<System::Windows::Forms::AnchorStyles>((System::Windows::Forms::AnchorStyles::Top | System::Windows::Forms::AnchorStyles::Right));
+			this->button_login_exit->BackColor = System::Drawing::Color::SeaShell;
 			this->button_login_exit->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 13.875F, System::Drawing::FontStyle::Regular,
 				System::Drawing::GraphicsUnit::Point, static_cast<System::Byte>(204)));
 			this->button_login_exit->Location = System::Drawing::Point(1211, 12);
@@ -89,7 +91,7 @@ namespace Project {
 			this->button_login_exit->Size = System::Drawing::Size(206, 99);
 			this->button_login_exit->TabIndex = 1;
 			this->button_login_exit->Text = L"Выход";
-			this->button_login_exit->UseVisualStyleBackColor = true;
+			this->button_login_exit->UseVisualStyleBackColor = false;
 			this->button_login_exit->Click += gcnew System::EventHandler(this, &login::button_login_exit_Click);
 			// 
 			// label_login_zooname
@@ -121,6 +123,7 @@ namespace Project {
 			// button_login_admin
 			// 
 			this->button_login_admin->Anchor = System::Windows::Forms::AnchorStyles::None;
+			this->button_login_admin->BackColor = System::Drawing::Color::SeaShell;
 			this->button_login_admin->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 19.875F, System::Drawing::FontStyle::Regular,
 				System::Drawing::GraphicsUnit::Point, static_cast<System::Byte>(204)));
 			this->button_login_admin->Location = System::Drawing::Point(256, 412);
@@ -128,12 +131,13 @@ namespace Project {
 			this->button_login_admin->Size = System::Drawing::Size(454, 221);
 			this->button_login_admin->TabIndex = 4;
 			this->button_login_admin->Text = L"Администратор";
-			this->button_login_admin->UseVisualStyleBackColor = true;
+			this->button_login_admin->UseVisualStyleBackColor = false;
 			this->button_login_admin->Click += gcnew System::EventHandler(this, &login::button_login_admin_Click);
 			// 
 			// button_login_user
 			// 
 			this->button_login_user->Anchor = System::Windows::Forms::AnchorStyles::None;
+			this->button_login_user->BackColor = System::Drawing::Color::SeaShell;
 			this->button_login_user->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 19.875F, System::Drawing::FontStyle::Regular,
 				System::Drawing::GraphicsUnit::Point, static_cast<System::Byte>(204)));
 			this->button_login_user->Location = System::Drawing::Point(838, 412);
@@ -141,7 +145,7 @@ namespace Project {
 			this->button_login_user->Size = System::Drawing::Size(454, 221);
 			this->button_login_user->TabIndex = 5;
 			this->button_login_user->Text = L"Пользователь";
-			this->button_login_user->UseVisualStyleBackColor = true;
+			this->button_login_user->UseVisualStyleBackColor = false;
 			this->button_login_user->Click += gcnew System::EventHandler(this, &login::button_login_user_Click);
 			// 
 			// login
