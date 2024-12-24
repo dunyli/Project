@@ -118,11 +118,21 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <ClCompile Include="adminform.cpp" />
+    <ClCompile Include="change_pass.cpp" />
+    <ClCompile Include="database.cpp" />
     <ClCompile Include="info.cpp" />
     <ClCompile Include="login.cpp" />
     <ClCompile Include="password.cpp" />
+    <ClCompile Include="userform.cpp" />
   </ItemGroup>
   <ItemGroup>
+    <ClInclude Include="change_pass.h">
+      <FileType>CppForm</FileType>
+    </ClInclude>
+    <ClInclude Include="database.h">
+      <FileType>CppForm</FileType>
+    </ClInclude>
     <ClInclude Include="info.h">
       <FileType>CppForm</FileType>
     </ClInclude>
@@ -134,6 +144,12 @@
     </ClInclude>
   </ItemGroup>
   <ItemGroup>
+    <EmbeddedResource Include="change_pass.resx">
+      <DependentUpon>change_pass.h</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="database.resx">
+      <DependentUpon>database.h</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="info.resx">
       <DependentUpon>info.h</DependentUpon>
     </EmbeddedResource>

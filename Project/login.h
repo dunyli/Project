@@ -1,7 +1,7 @@
 #pragma once
 #include "info.h"
 #include "password.h"
-//#include "work.h"
+#include "database.h"
 
 namespace Project {
 
@@ -43,16 +43,7 @@ namespace Project {
 	private: System::Windows::Forms::Label^ label_login_in;
 	private: System::Windows::Forms::Button^ button_login_admin;
 	private: System::Windows::Forms::Button^ button_login_user;
-
-
-
-
-
-
 	protected:
-
-	protected:
-
 
 	private:
 		/// <summary>
@@ -157,6 +148,7 @@ namespace Project {
 			// 
 			this->AutoScaleDimensions = System::Drawing::SizeF(12, 25);
 			this->AutoScaleMode = System::Windows::Forms::AutoScaleMode::Font;
+			this->BackColor = System::Drawing::SystemColors::InactiveCaption;
 			this->ClientSize = System::Drawing::Size(1503, 869);
 			this->Controls->Add(this->button_login_user);
 			this->Controls->Add(this->button_login_admin);
@@ -182,9 +174,24 @@ private: System::Void button_login_exit_Click(System::Object^ sender, System::Ev
 }
 /*ќбработка кнопки јƒћ»Ќ»—“–ј“ќ–, после нажати€ кнопки происходит открытие формы password.h*/
 private: System::Void button_login_admin_Click(System::Object^ sender, System::EventArgs^ e) {
+	password^ pass = gcnew password;
+	pass->ShowDialog();
+	bool next_work = pass->prov_pass;
+	/*≈сли пароль совпал, то открываетс€ форма workform*/
+	if (next_work == true)
+	{
+		database^ admin = gcnew database;
+		admin->Show();
+		admin->Owner = this;
+		this->Hide();
+	}
 }
-/*ќбработка кнопки ѕќЋ№«ќ¬ј“≈Ћ№, после нажати€ кнопки происходит открытие формы work.h и в ней скрываютс€ элементы, не доступные пользователю*/
+/*ќбработка кнопки ѕќЋ№«ќ¬ј“≈Ћ№, после нажати€ кнопки происходит открытие формы userform.h*/
 private: System::Void button_login_user_Click(System::Object^ sender, System::EventArgs^ e) {
+	database^ user = gcnew database;
+	user->Show();
+	user->Owner = this;
+	this->Hide();
 }
 };
 }

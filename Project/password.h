@@ -1,4 +1,5 @@
 #pragma once
+#include "change_pass.h"
 
 namespace Project {
 
@@ -8,6 +9,7 @@ namespace Project {
 	using namespace System::Windows::Forms;
 	using namespace System::Data;
 	using namespace System::Drawing;
+	using namespace System::IO;
 
 	/// <summary>
 	/// Сводка для password
@@ -22,7 +24,10 @@ namespace Project {
 			//TODO: добавьте код конструктора
 			//
 		}
-
+	public: bool prov_pass = false;
+	public:
+		/*Переменная для проверки пароля*/
+		String^ pass_right;
 	protected:
 		/// <summary>
 		/// Освободить все используемые ресурсы.
@@ -94,6 +99,7 @@ namespace Project {
 			this->button_password_enter->TabIndex = 2;
 			this->button_password_enter->Text = L"Ввод";
 			this->button_password_enter->UseVisualStyleBackColor = true;
+			this->button_password_enter->Click += gcnew System::EventHandler(this, &password::button_password_enter_Click);
 			// 
 			// button_password_back
 			// 
@@ -119,6 +125,7 @@ namespace Project {
 			this->button_password_change->TabIndex = 4;
 			this->button_password_change->Text = L"Сменить пароль";
 			this->button_password_change->UseVisualStyleBackColor = true;
+			this->button_password_change->Click += gcnew System::EventHandler(this, &password::button_password_change_Click);
 			// 
 			// password
 			// 
@@ -137,9 +144,37 @@ namespace Project {
 
 		}
 #pragma endregion
-	/*Возвращение назад, к форме login*/
-	private: System::Void button_password_back_Click(System::Object^ sender, System::EventArgs^ e) {
-		this->Close();
+/*Возвращение назад, к форме login*/
+private: System::Void button_password_back_Click(System::Object^ sender, System::EventArgs^ e) {
+	this->Close();
+}
+/*Нажатие кнопки ВВОД*/
+private: System::Void button_password_enter_Click(System::Object^ sender, System::EventArgs^ e) {
+	/*Открытие заранее созданного файла, с записанным паролем*/
+	StreamReader^ pass = gcnew StreamReader("pass.txt");
+	pass_right = pass->ReadLine();
+	pass->Close();
+	String^ pass_input;
+	cli::array<Char>^ passw;
+	/*Посимвольное считывание строки, введенной в textBox*/
+	passw = textBox_password->Text->ToCharArray();
+	for (int i = 0; i < textBox_password->TextLength; i++) {
+		pass_input += (wchar_t)passw[i];
 	}
+	if (pass_input == pass_right)
+	{
+		prov_pass = true;
+		this->Hide();
+	}
+	else {
+		textBox_password->Text = "";
+		MessageBox::Show("Неверный пароль!\nПовторите ввод.", "Ошибка", MessageBoxButtons::OK, MessageBoxIcon::Error);
+	}
+}
+/*Нажатие кнопки Сменить пароль, открывается форма change_pass.h*/
+private: System::Void button_password_change_Click(System::Object^ sender, System::EventArgs^ e) {
+	change_pass^ change = gcnew change_pass;
+	change->Show();
+}
 };
 }
