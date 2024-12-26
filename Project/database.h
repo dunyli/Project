@@ -141,6 +141,7 @@ namespace Project {
 			this->ToolStripMenuItem_info->Name = L"ToolStripMenuItem_info";
 			this->ToolStripMenuItem_info->Size = System::Drawing::Size(162, 49);
 			this->ToolStripMenuItem_info->Text = L"Справка";
+			this->ToolStripMenuItem_info->Click += gcnew System::EventHandler(this, &database::ToolStripMenuItem_info_Click);
 			// 
 			// ToolStripMenuItem_exit
 			// 
@@ -154,11 +155,12 @@ namespace Project {
 			this->AutoScaleDimensions = System::Drawing::SizeF(12, 25);
 			this->AutoScaleMode = System::Windows::Forms::AutoScaleMode::Font;
 			this->BackColor = System::Drawing::SystemColors::InactiveCaption;
-			this->ClientSize = System::Drawing::Size(2110, 712);
+			this->ClientSize = System::Drawing::Size(2110, 757);
 			this->Controls->Add(this->menuStrip);
 			this->MainMenuStrip = this->menuStrip;
 			this->Name = L"database";
 			this->Text = L"База данных";
+			this->Load += gcnew System::EventHandler(this, &database::database_Load);
 			this->menuStrip->ResumeLayout(false);
 			this->menuStrip->PerformLayout();
 			this->ResumeLayout(false);
@@ -179,9 +181,31 @@ private: System::Void ToolStripMenuItem_exit_Click(System::Object^ sender, Syste
 	Owner->Show();
 	this->Hide();
 }
+
+/*Обработка закрытия формы на Х*/
+private: System::Void work_FormClosing(System::Object^ sender, System::Windows::Forms::FormClosingEventArgs^ e) {
+	/*Если какие - то данные были изменены */
+	if (save == false)
+		switch (MessageBox::Show("При выходе из базы данных все несохраненные данные будут потеряны.\nПрименить изменения?", "Внимание", MessageBoxButtons::YesNo, MessageBoxIcon::Warning)) {
+		case System::Windows::Forms::DialogResult::Yes: ToolStripMenuItem_safe_Click(sender, e);  break;
+		case System::Windows::Forms::DialogResult::No: break;
+		}
+	Owner->Show();
+	this->Hide();
+}
 /*Обработка нажатия на кнопку Сохранить*/
 private: System::Void ToolStripMenuItem_safe_Click(System::Object^ sender, System::EventArgs^ e) {
 
 }
+
+/*Обработка нажатия на кнопку СПРАВКА*/
+private: System::Void ToolStripMenuItem_info_Click(System::Object^ sender, System::EventArgs^ e) {
+	info^ inf = gcnew info;
+	inf->Show();
+}
+
+private: System::Void database_Load(System::Object^ sender, System::EventArgs^ e) {
+}
+
 };
 }
