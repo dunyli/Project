@@ -76,6 +76,7 @@ namespace Project {
 			// button_change_pass_back
 			// 
 			this->button_change_pass_back->Anchor = System::Windows::Forms::AnchorStyles::None;
+			this->button_change_pass_back->BackColor = System::Drawing::Color::SeaShell;
 			this->button_change_pass_back->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 16.125F, System::Drawing::FontStyle::Regular,
 				System::Drawing::GraphicsUnit::Point, static_cast<System::Byte>(204)));
 			this->button_change_pass_back->Location = System::Drawing::Point(936, 29);
@@ -83,7 +84,7 @@ namespace Project {
 			this->button_change_pass_back->Size = System::Drawing::Size(435, 108);
 			this->button_change_pass_back->TabIndex = 4;
 			this->button_change_pass_back->Text = L"Вернуться назад";
-			this->button_change_pass_back->UseVisualStyleBackColor = true;
+			this->button_change_pass_back->UseVisualStyleBackColor = false;
 			this->button_change_pass_back->Click += gcnew System::EventHandler(this, &change_pass::button_change_pass_back_Click);
 			// 
 			// button_change_pass_enter_old
@@ -125,6 +126,7 @@ namespace Project {
 			// button_change_pass_enter_new
 			// 
 			this->button_change_pass_enter_new->Anchor = System::Windows::Forms::AnchorStyles::None;
+			this->button_change_pass_enter_new->BackColor = System::Drawing::Color::SeaShell;
 			this->button_change_pass_enter_new->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 19.875F, System::Drawing::FontStyle::Regular,
 				System::Drawing::GraphicsUnit::Point, static_cast<System::Byte>(204)));
 			this->button_change_pass_enter_new->Location = System::Drawing::Point(494, 545);
@@ -132,7 +134,7 @@ namespace Project {
 			this->button_change_pass_enter_new->Size = System::Drawing::Size(462, 141);
 			this->button_change_pass_enter_new->TabIndex = 8;
 			this->button_change_pass_enter_new->Text = L"Ввод";
-			this->button_change_pass_enter_new->UseVisualStyleBackColor = true;
+			this->button_change_pass_enter_new->UseVisualStyleBackColor = false;
 			this->button_change_pass_enter_new->Visible = false;
 			this->button_change_pass_enter_new->Click += gcnew System::EventHandler(this, &change_pass::button_change_pass_enter_new_Click);
 			// 
@@ -164,6 +166,7 @@ namespace Project {
 			// 
 			this->AutoScaleDimensions = System::Drawing::SizeF(12, 25);
 			this->AutoScaleMode = System::Windows::Forms::AutoScaleMode::Font;
+			this->BackColor = System::Drawing::SystemColors::InactiveCaption;
 			this->ClientSize = System::Drawing::Size(1429, 907);
 			this->Controls->Add(this->label_change_pass_new);
 			this->Controls->Add(this->textBox_change_pass_new);
@@ -207,12 +210,7 @@ private: System::Void button_change_pass_enter_old_Click(System::Object^ sender,
 	pass_right = pass->ReadLine();
 	pass->Close();
 	String^ pass_input;
-	cli::array<Char>^ passw;
-	/*Посимвольное считывание строки, введенной в textBox*/
-	passw = textBox_change_pass_old->Text->ToCharArray();
-	for (int i = 0; i < textBox_change_pass_old->TextLength; i++) {
-		pass_input += (wchar_t)passw[i];
-	}
+	pass_input = textBox_change_pass_old->Text;
 	if (pass_input == pass_right)
 	{
 		label_change_pass_old->Visible = false;

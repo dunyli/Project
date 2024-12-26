@@ -91,6 +91,7 @@ namespace Project {
 			// button_password_enter
 			// 
 			this->button_password_enter->Anchor = System::Windows::Forms::AnchorStyles::None;
+			this->button_password_enter->BackColor = System::Drawing::Color::SeaShell;
 			this->button_password_enter->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 19.875F, System::Drawing::FontStyle::Regular,
 				System::Drawing::GraphicsUnit::Point, static_cast<System::Byte>(204)));
 			this->button_password_enter->Location = System::Drawing::Point(500, 541);
@@ -98,12 +99,13 @@ namespace Project {
 			this->button_password_enter->Size = System::Drawing::Size(462, 141);
 			this->button_password_enter->TabIndex = 2;
 			this->button_password_enter->Text = L"Ввод";
-			this->button_password_enter->UseVisualStyleBackColor = true;
+			this->button_password_enter->UseVisualStyleBackColor = false;
 			this->button_password_enter->Click += gcnew System::EventHandler(this, &password::button_password_enter_Click);
 			// 
 			// button_password_back
 			// 
 			this->button_password_back->Anchor = System::Windows::Forms::AnchorStyles::None;
+			this->button_password_back->BackColor = System::Drawing::Color::SeaShell;
 			this->button_password_back->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 16.125F, System::Drawing::FontStyle::Regular,
 				System::Drawing::GraphicsUnit::Point, static_cast<System::Byte>(204)));
 			this->button_password_back->Location = System::Drawing::Point(976, 31);
@@ -111,12 +113,13 @@ namespace Project {
 			this->button_password_back->Size = System::Drawing::Size(435, 108);
 			this->button_password_back->TabIndex = 3;
 			this->button_password_back->Text = L"Вернуться назад";
-			this->button_password_back->UseVisualStyleBackColor = true;
+			this->button_password_back->UseVisualStyleBackColor = false;
 			this->button_password_back->Click += gcnew System::EventHandler(this, &password::button_password_back_Click);
 			// 
 			// button_password_change
 			// 
 			this->button_password_change->Anchor = System::Windows::Forms::AnchorStyles::None;
+			this->button_password_change->BackColor = System::Drawing::Color::SeaShell;
 			this->button_password_change->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 16.125F, System::Drawing::FontStyle::Regular,
 				System::Drawing::GraphicsUnit::Point, static_cast<System::Byte>(204)));
 			this->button_password_change->Location = System::Drawing::Point(31, 764);
@@ -124,13 +127,14 @@ namespace Project {
 			this->button_password_change->Size = System::Drawing::Size(395, 108);
 			this->button_password_change->TabIndex = 4;
 			this->button_password_change->Text = L"Сменить пароль";
-			this->button_password_change->UseVisualStyleBackColor = true;
+			this->button_password_change->UseVisualStyleBackColor = false;
 			this->button_password_change->Click += gcnew System::EventHandler(this, &password::button_password_change_Click);
 			// 
 			// password
 			// 
 			this->AutoScaleDimensions = System::Drawing::SizeF(12, 25);
 			this->AutoScaleMode = System::Windows::Forms::AutoScaleMode::Font;
+			this->BackColor = System::Drawing::SystemColors::InactiveCaption;
 			this->ClientSize = System::Drawing::Size(1448, 902);
 			this->Controls->Add(this->button_password_change);
 			this->Controls->Add(this->button_password_back);
@@ -154,13 +158,7 @@ private: System::Void button_password_enter_Click(System::Object^ sender, System
 	StreamReader^ pass = gcnew StreamReader("pass.txt");
 	pass_right = pass->ReadLine();
 	pass->Close();
-	String^ pass_input;
-	cli::array<Char>^ passw;
-	/*Посимвольное считывание строки, введенной в textBox*/
-	passw = textBox_password->Text->ToCharArray();
-	for (int i = 0; i < textBox_password->TextLength; i++) {
-		pass_input += (wchar_t)passw[i];
-	}
+	String^ pass_input = textBox_password->Text;
 	if (pass_input == pass_right)
 	{
 		prov_pass = true;

@@ -15,9 +15,6 @@
     </Filter>
   </ItemGroup>
   <ItemGroup>
-    <ClCompile Include="userform.cpp">
-      <Filter>Исходные файлы</Filter>
-    </ClCompile>
     <ClCompile Include="password.cpp">
       <Filter>Исходные файлы</Filter>
     </ClCompile>
@@ -27,14 +24,11 @@
     <ClCompile Include="login.cpp">
       <Filter>Исходные файлы</Filter>
     </ClCompile>
-    <ClCompile Include="adminform.cpp">
-      <Filter>Исходные файлы</Filter>
-    </ClCompile>
     <ClCompile Include="change_pass.cpp">
       <Filter>Исходные файлы</Filter>
     </ClCompile>
     <ClCompile Include="database.cpp">
-      <Filter>Файлы заголовков</Filter>
+      <Filter>Исходные файлы</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>

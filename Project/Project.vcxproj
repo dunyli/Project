@@ -118,13 +118,11 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <ClCompile Include="adminform.cpp" />
     <ClCompile Include="change_pass.cpp" />
     <ClCompile Include="database.cpp" />
     <ClCompile Include="info.cpp" />
     <ClCompile Include="login.cpp" />
     <ClCompile Include="password.cpp" />
-    <ClCompile Include="userform.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="change_pass.h">

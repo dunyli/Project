@@ -76,9 +76,9 @@ namespace Project {
 			this->ToolStripMenuItem_choiceServices = (gcnew System::Windows::Forms::ToolStripMenuItem());
 			this->ToolStripMenuItem_search = (gcnew System::Windows::Forms::ToolStripMenuItem());
 			this->ToolStripMenuItem_adddata = (gcnew System::Windows::Forms::ToolStripMenuItem());
+			this->ToolStripMenuItem_safe = (gcnew System::Windows::Forms::ToolStripMenuItem());
 			this->ToolStripMenuItem_info = (gcnew System::Windows::Forms::ToolStripMenuItem());
 			this->ToolStripMenuItem_exit = (gcnew System::Windows::Forms::ToolStripMenuItem());
-			this->ToolStripMenuItem_safe = (gcnew System::Windows::Forms::ToolStripMenuItem());
 			this->menuStrip->SuspendLayout();
 			this->SuspendLayout();
 			// 
@@ -95,7 +95,7 @@ namespace Project {
 			});
 			this->menuStrip->Location = System::Drawing::Point(0, 0);
 			this->menuStrip->Name = L"menuStrip";
-			this->menuStrip->Size = System::Drawing::Size(2032, 53);
+			this->menuStrip->Size = System::Drawing::Size(2110, 53);
 			this->menuStrip->TabIndex = 0;
 			this->menuStrip->Text = L"menuStrip";
 			// 
@@ -129,6 +129,13 @@ namespace Project {
 			this->ToolStripMenuItem_adddata->Size = System::Drawing::Size(338, 49);
 			this->ToolStripMenuItem_adddata->Text = L"Добавление данных";
 			// 
+			// ToolStripMenuItem_safe
+			// 
+			this->ToolStripMenuItem_safe->Name = L"ToolStripMenuItem_safe";
+			this->ToolStripMenuItem_safe->Size = System::Drawing::Size(195, 49);
+			this->ToolStripMenuItem_safe->Text = L"Сохранить";
+			this->ToolStripMenuItem_safe->Click += gcnew System::EventHandler(this, &database::ToolStripMenuItem_safe_Click);
+			// 
 			// ToolStripMenuItem_info
 			// 
 			this->ToolStripMenuItem_info->Name = L"ToolStripMenuItem_info";
@@ -142,20 +149,16 @@ namespace Project {
 			this->ToolStripMenuItem_exit->Text = L"Выход из БД";
 			this->ToolStripMenuItem_exit->Click += gcnew System::EventHandler(this, &database::ToolStripMenuItem_exit_Click);
 			// 
-			// ToolStripMenuItem_safe
-			// 
-			this->ToolStripMenuItem_safe->Name = L"ToolStripMenuItem_safe";
-			this->ToolStripMenuItem_safe->Size = System::Drawing::Size(195, 49);
-			this->ToolStripMenuItem_safe->Text = L"Сохранить";
-			// 
 			// database
 			// 
 			this->AutoScaleDimensions = System::Drawing::SizeF(12, 25);
 			this->AutoScaleMode = System::Windows::Forms::AutoScaleMode::Font;
-			this->ClientSize = System::Drawing::Size(2032, 712);
+			this->BackColor = System::Drawing::SystemColors::InactiveCaption;
+			this->ClientSize = System::Drawing::Size(2110, 712);
 			this->Controls->Add(this->menuStrip);
 			this->MainMenuStrip = this->menuStrip;
 			this->Name = L"database";
+			this->Text = L"База данных";
 			this->menuStrip->ResumeLayout(false);
 			this->menuStrip->PerformLayout();
 			this->ResumeLayout(false);
@@ -163,6 +166,7 @@ namespace Project {
 
 		}
 #pragma endregion
+
 /*Обработка нажатия на кнопку ВЫХОД ИЗ БД*/
 private: System::Void ToolStripMenuItem_exit_Click(System::Object^ sender, System::EventArgs^ e) {
 	/*Если какие-то данные были изменены*/
@@ -175,6 +179,9 @@ private: System::Void ToolStripMenuItem_exit_Click(System::Object^ sender, Syste
 	Owner->Show();
 	this->Hide();
 }
+/*Обработка нажатия на кнопку Сохранить*/
+private: System::Void ToolStripMenuItem_safe_Click(System::Object^ sender, System::EventArgs^ e) {
+
 }
 };
 }
